@@ -1,0 +1,193 @@
+<template>
+
+
+	<section id="form">
+
+        <h1 id="form_heading">
+            Nous contacter
+        </h1>
+
+        <form @submit.prevent="onSubmit">
+
+            <label for="firstName">
+                Votre Prénom
+            </label>
+            <input type="text" v-model="firstName" id="first_name" placeholder="Votre Prénom" autocomplete="none" class="input" @focus="headingForm" @blur="headingForm">
+
+            <label for="lastName">
+                Votre Nom
+            </label>
+            <input type="text" v-model="lastName" id="last_name" placeholder="Votre Nom" autocomplete="none" class="input" @focus="headingForm" @blur="headingForm">
+
+            <label for="email">
+                Votre Mail
+            </label>
+            <input type="email" v-model="email" id="email" placeholder="Votre Email" autocomplete="none" class="input" @focus="headingForm" @blur="headingForm">
+
+            <label for="subject">
+                L'object de votre message
+            </label>
+            <select v-model="subject" id="subject">
+                <option value="">
+                    Choisissez l'objet de votre message
+                </option>
+                <option value="consulting">
+                    Un besoin en consulting
+                </option>
+                <option value="conference">
+                    Un projet de Conférence
+                </option>
+                <option value="formation">
+                    Un projet de formation
+                </option>
+                <option value="other">
+                    Autre
+                </option>
+            </select>
+
+            <label for="message">
+                Votre message
+            </label>
+            <textarea v-model="message" id="message" cols="10" rows="10" placeholder="Votre message" resize="none" class="input" @focus="headingForm" @blur="headingForm"></textarea>
+
+            <button type="submit" id="btn_submit" class="btn-1">
+                Submit
+            </button>
+
+        </form>
+
+        <div id="infos_form">
+            <span class="alert-succes"></span>
+            <span class="alert-error"></span>
+        </div>
+
+	</section>
+
+
+</template>
+
+
+
+<script lang="ts">
+
+
+    import { defineComponent } from 'vue';
+    // import validateForm from 'src/scripts/validateForm';
+
+    export default defineComponent ({
+
+    	name: 'FormContact',
+        // components: {
+        //     // validateForm,
+        // },
+        data() {
+            return {
+                firstName:  '',
+                lastName: '',
+                email: '',
+                subject: '',
+                message: '',
+            };
+        },
+        methods: {
+
+            validateForm(): boolean {
+
+                if ( this.firstName ===  "" || this.lastName === '' || this.email === '' || this.subject === '' || this.message === '' ) {
+                    return false;
+                } else {
+                    return true;
+                }
+
+            },
+
+            // validateInfos(): boolean {
+            //     return true;
+            // },
+
+            onSubmit(): void {
+
+                if ( this.validateForm() ) {
+
+                    let formInfos = {
+                        firstName: this.firstName,
+                        lastName: this.lastName,
+                        email: this.email,
+                        subject: this.subject,
+                        message: this.message,
+                    };
+                    this.$emit( 'form-submitted', formInfos );
+
+                    // const successMessage = document.getElementsByClassName('.alert-succes') as unknown as HTMLSpanElement;
+                    // successMessage.setAttribute("style", "display: bloc");
+                    // Object.assign(successMessage.style, {display: "bloc"});
+                    // successMessage.innerText = "Votre message a été envoyé avec succès !";
+
+                    this.firstName = '';
+                    this.lastName = '';
+                    this.email = '';
+                    this.subject = '';
+                    this.message = '';
+
+                } else {
+                    console.log('error');
+
+                    // const errorMessage= document.getElementsByClassName('.alert-error') as unknown as HTMLDivElement;
+                    // errorMessage.setAttribute("style", "display: bloc");
+                    // Object.assign(errorMessage.style, {display: "bloc"});
+                    // errorMessage.innerText = 'Veuillez remplir les champs correctement';
+                };
+
+            },
+
+            headingForm(): void {
+
+                const formHeading = document.getElementById('form_heading') as HTMLHeadingElement;
+                const formInputs = document.querySelectorAll(".input") as NodeListOf<HTMLInputElement>;
+
+                formInputs.forEach( (input) => {
+
+                    input.addEventListener( 'focus', () => {
+
+                        formHeading.style.opacity = "0";
+
+                        setTimeout(() => {
+                            formHeading.textContent = `${input.placeholder}`;
+                            formHeading.style.animation = "apparition_left 1s ease-in-out";
+                            formHeading.style.opacity = "1";
+                        }, 100);
+
+                    });
+
+                    input.addEventListener( 'blur', () => {
+
+                        formHeading.style.opacity = "0";
+
+                        setTimeout(() => {
+                            formHeading.textContent = "Nous contacter";
+                            formHeading.style.animation = "disparition_left 1s ease-in-out";
+                            formHeading.style.opacity = "1";
+                        }, 100);
+
+                    });
+
+                });
+
+            },
+            
+        },
+
+    });
+
+
+</script>
+
+
+
+<style lang="scss">
+
+	// Imports
+	@import "src/styles/global.scss";
+	@import "src/styles/styles.components/contact.form.scss";
+
+</style>

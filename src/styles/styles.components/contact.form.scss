@@ -1,0 +1,59 @@
+// Imports 
+
+    @import "src/styles/global.scss";
+
+//
+
+// Form 
+
+    #form {
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        width: 100%;
+
+        form {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+
+            label {
+                padding: 5vh 0 1vw;
+                display: flex;
+                color: $white;
+                justify-content: center;
+            }
+
+            input,
+            select,
+            textarea {
+                background-color: $white;
+                border-radius: 7px;
+                border: 1px $greyLight solid;
+                padding: 1vh 1vw;
+                resize: none;
+
+                &:focus {
+                    border: 1px $grey solid;
+                }
+            }
+
+            #btn_submit {
+                margin: 5vh auto;
+                width: 30%;
+            }
+
+        }
+
+        #infos_form {
+            display: flex;
+            width: 30%;
+            margin: 5vh auto 10vh;
+            text-align: center;
+            justify-content: center;
+        }
+    }
+
+//

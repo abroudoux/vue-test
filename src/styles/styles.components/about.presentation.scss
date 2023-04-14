@@ -1,0 +1,40 @@
+// Imports 
+
+    @import "src/styles/global.scss";
+
+//
+
+// Presentation 
+
+    #presentation {
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        flex-direction: row;
+
+        #presentation_txt {
+            width: 50%;
+            height: 100%;
+
+            p {
+                text-justify: auto;
+                padding: 0 5vw;
+                animation: apparition_left 1s ease-in-out;
+            }
+
+            h2 {
+                padding: 10vh 5vw 5vh;
+            }
+
+            #btn_presentation_link {
+                margin: 0 5vw;
+            }
+        }
+
+        #presentation_img {
+            width: 50%;
+            height: 100%;
+        }
+    }
+
+//

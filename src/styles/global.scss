@@ -1,0 +1,188 @@
+// Imports
+
+    // Overpass Font Family
+    @import url('https://www.dafontfree.io/overpass-font-family/');
+
+//
+
+// Variables 
+
+    $pink : #EC4081;
+    $pinkDark : #D03872;
+    $black : #151514;
+    $white : #F3F5F7;
+    $blueDark : #0F084B;
+    $blueDarkLight : #112C6B;
+    $blueLight : #00A7E1;
+    $grey : #98A1B3;
+    $greyLight : #E1E2E6;
+    $greyDark : #425783;
+    $green : #61E294;
+    $greenLight : #72E8A0;
+    $red : #F8183E;
+    $redLight : #FCA3B2;
+
+//
+
+// Animations 
+
+    @keyframes apparition {
+
+        from {
+            opacity: 0;
+            transform: translateY(-200px);
+        } to {
+            oppacity: 1;
+        }
+
+    }
+
+    @keyframes apparition_left {
+
+        from {
+            opacity: 0;
+            transform: translateX(-200px);
+        } to {
+            oppacity: 1;
+        }
+
+    }
+
+    @keyframes apparition_right {
+
+        from {
+            opacity: 0;
+            transform: translateX(200px);
+        } to {
+            oppacity: 1;
+        }
+
+    }
+
+    @keyframes disparition_left {
+
+        from {
+            opacity: 1;
+            transform: translateX(-200px);
+        } to {
+            oppacity: 0;
+        }
+
+    }
+
+    @keyframes disparition_right {
+
+        from {
+            opacity: 1;
+            transform: translateX(200px);
+        } to {
+            oppacity: 0;
+        }
+
+    }
+
+//
+
+// Global style
+
+    *,
+    *::after,
+    *::before,
+    html {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        color: $black;
+        font-family: 'Overpass', sans-serif;
+        font-size: 18px;
+        background-color: $blueDark;
+        scroll-behavior: smooth;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    h1 {
+        font-weight: 600;
+        font-size: 4rem;
+        color: $white;
+        background: none;
+        padding: 5vh 0 5vh 5vw;
+        animation: apparition 1.5s ease-in-out;
+    }
+
+    h2 {
+        @extend h1;
+
+        font-weight: 400;
+        font-size: 3rem;
+        padding: 0;
+        animation: none;
+    }
+
+    p {
+        font-weight: 300;
+        color: $white;
+    }
+
+//
+
+// Classes
+
+    .btn-1 {
+        padding: 2vh 2vw;
+        border: none;
+        background-color: $pink;
+        transition: .5s all ease-in-out;
+        color: $white;
+        border-radius: 10px;
+
+        a {
+            font-weight: 100;
+            font-size: 16px;
+            color: $white;
+            background-color: $pink;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: darken($pink, 5);
+        }
+    }
+
+    .btn-2 {
+        @extend .btn-1;
+        background-color: $blueDark;
+        color: $white; 
+        border: 1px solid $white;
+
+        a {
+            background-color: $blueDark;
+        }
+
+        &:hover {
+            background-color: darken($blueDark, 5);
+        }
+    }
+
+    .alert-error {
+        display: none;
+        background-color: $redLight;
+        border: 1px solid $red;
+        border-radius: 10px;
+        color: $red;
+        padding: 2vh 2vw;
+    }
+
+    .alert-succes {
+        @extend .alert-error;
+
+        background-color: $greenLight;
+        border: 1px solid $green;
+        color: $white;
+        padding: 2vh 2vw;
+    }
+
+//

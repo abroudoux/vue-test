@@ -1,25 +1,25 @@
 <template>
 
-	<div>
-    	<LinksHome />
-	</div>
+    <div>
+        <FormContact />
+    </div>
 
 </template>
-
-
+  
+  
 <script lang="ts">
 
     import { defineComponent } from 'vue';
-    import LinksHome from '@/components/LinksHome.vue';
+    import FormContact from '@/components/FormContact.vue';
 
     export default defineComponent({
-        name: 'HomeView',
+        name: 'ContactView',
         components: {
-            LinksHome,
+            FormContact,
         },
     });
-
+  
 </script>
-
-
+  
+  
 <style lang="scss"></style>
