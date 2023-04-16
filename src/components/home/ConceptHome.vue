@@ -48,16 +48,9 @@
 
             </div>
 
-            <div id="conseils">
-                <h4>
-                    Conseil en Sciences Comportementales & Nudges
-                </h4>
-                <p>
-                    L'ingénierie comportementale au service de votre entreprise
-                </p>
-            </div>
-
         </div>
+
+        <div id="banner"></div>
 
 	</section>
 

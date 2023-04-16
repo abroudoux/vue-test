@@ -48,6 +48,6 @@
 
 	// Imports
 	@import "src/styles/global.scss";
-	@import "src/components/about/presentation/about.presentation.scss";
+	@import "src/components/about/about.presentation.scss";
 
 </style>

@@ -2,7 +2,7 @@
 
     <header>
 
-        <div id="logo">
+        <div class="logo">
             <a href="/">
                 <img :src='require("../public/img/logo_krakn.png")' />
             </a>
@@ -25,7 +25,7 @@
 
         <div id="footer_top">
 
-            <div id="logo">
+            <div class="logo">
                 <a href="/">
                     <img :src='require("../public/img/logo_krakn.png")' />
                 </a>
@@ -40,23 +40,23 @@
             <div id="rs">
                 <ul>
                     <li>
-                        <a href="">
-                            <font-awesome-icon :icon="['fab', 'youtube']" />
+                        <a href="https://www.youtube.com/@cerveauclient3769" target="_blank">
+                            <font-awesome-icon icon="fa-brands fa-youtube" class="icons" />
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <font-awesome-icon :icon="['fab', 'linkedin']" />
+                        <a href="https://www.linkedin.com/company/hi-is-nice/?originalSubdomain=fr" target="_blank">
+                            <font-awesome-icon icon="fa-brands fa-linkedin" class="icons" />
                         </a>
                     </li>
                     <li>
                         <a href="https://github.com/abroudoux/vue-test" target="_blank">
-                            <font-awesome-icon :icon="['fab', 'github']" />
+                            <font-awesome-icon icon="fa-brands fa-github" class="icons" />
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <font-awesome-icon :icon="['fas', 'link']" />
+                        <a href="https://www.krakn.fr/" target="_blank">
+                            <font-awesome-icon icon="fa-solid fa-link" class="icons" />
                         </a>
                     </li>
                 </ul>

@@ -7,10 +7,11 @@
 // Concept 
 
     #concept {
+        height: 100vh;
 
         #sc {
             width: 100%;
-            height: 100vh;
+            height: 60vh;
             display: flex;
             flex-direction: column;
 
@@ -21,7 +22,7 @@
 
             #reasons_sc {
 
-                margin: 15vh 0;
+                margin: 10vh 0;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
@@ -60,24 +61,14 @@
                     }
                 }
             }
+        }
 
-            #conseils {
-                width: 100%;
-
-                h4 {
-                    color: $white;
-                    font-size: 2rem;
-                    font-weight: 300;
-                    padding: 0 0 3vh 5vw;
-                }
-
-                p {
-                    @extend h4;
-
-                    font-size: 1rem;
-                    font-weight: 100;;
-                }
-            }
+        #banner {
+            width: 100%;
+            height: 40vh;
+            background-image: url("/Users/arthur/vue_project/public/img/banner.jpg");
+            background-size: cover;
+            background-attachment: fixed;
         }
     }
 

@@ -14,8 +14,8 @@
 <script lang="ts">
 
     import { defineComponent } from 'vue';
-    import PresentationAbout from '@/components/about/presentation/PresentationAbout.vue';
-    import TeamAbout from '@/components/about/team/TeamAbout.vue';
+    import PresentationAbout from '@/components/about/PresentationAbout.vue';
+    import TeamAbout from '@/components/about/TeamAbout.vue';
 
     export default defineComponent({
         name: 'AboutView',

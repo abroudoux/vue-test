@@ -27,7 +27,7 @@
 		</div>
 
 		<div id="links_img">
-			<!-- <img :src='require("../public/img/illustration_home.png")' /> -->
+			<img :src='require("/Users/arthur/vue_project/public/img/illustration_home.png")' />
 		</div>
 
 	</section>

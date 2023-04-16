@@ -11,6 +11,11 @@
         flex-direction: column;
         height: 80vh;
         width: 100%;
+        margin-bottom: 60vh;
+
+        h1 {
+            padding: 5vh 0 1vh 5vh;
+        }
 
         form {
             width: 50%;
@@ -20,7 +25,7 @@
             margin: 0 auto;
 
             label {
-                padding: 5vh 0 1vw;
+                padding: 3vh 0 1vw;
                 display: flex;
                 color: $white;
                 justify-content: center;
@@ -50,7 +55,7 @@
         #infos_form {
             display: hidden;
             width: 30%;
-            margin: 3vh auto;
+            margin: 2vh auto;
             text-align: center;
             justify-content: center;
         }

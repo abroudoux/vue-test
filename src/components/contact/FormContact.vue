@@ -118,10 +118,10 @@
                     this.subject = '';
                     this.message = '';
 
-                    const errorMessage = document.querySelector(".alert-error") as HTMLSpanElement;
+                    let errorMessage = document.querySelector(".alert-error") as HTMLSpanElement;
                     errorMessage.style.display = 'none';
 
-                    const successMessage = document.querySelector(".alert-success") as HTMLSpanElement;
+                    let successMessage = document.querySelector(".alert-success") as HTMLSpanElement;
                     successMessage.style.display = 'block';
                     successMessage.innerText = "Votre message a été envoyé avec succès !";
 
@@ -134,12 +134,12 @@
 
                 } else {
 
-                    const successMessage = document.querySelector(".alert-success") as HTMLSpanElement;
+                    let successMessage = document.querySelector(".alert-success") as HTMLSpanElement;
                     successMessage.style.display = 'none';
 
-                    const errorMessage = document.querySelector(".alert-error") as HTMLSpanElement;
+                    let errorMessage = document.querySelector(".alert-error") as HTMLSpanElement;
                     errorMessage.style.display = 'block';
-                    errorMessage.innerText = "Veuillez remplir le formulaire correctement";
+                    errorMessage.innerText = "Veuillez remplir le formulaire";
 
                     const form = document.getElementById('form');
 
