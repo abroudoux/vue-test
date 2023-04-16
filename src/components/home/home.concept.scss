@@ -1,0 +1,84 @@
+// Imports 
+
+    @import "src/styles/global.scss";
+
+//
+
+// Concept 
+
+    #concept {
+
+        #sc {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+                margin: 5vh 0 0;
+                padding: 0 0 0 5vw;
+            }
+
+            #reasons_sc {
+
+                margin: 15vh 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                width: 100%;
+
+                h3 {
+                    width: 10%;
+                    color: $white;
+                    font-size: 5rem;
+                    margin: 0 auto;
+                }
+
+                h4 { 
+                    color: $white;
+                    display: flex;
+                    justify-content: center;
+                    font-size: 3rem;
+                    font-weight: 3rem;
+                    margin: 0 auto;
+                }
+
+                p {
+                    margin-top: 3vh;
+                    color: $white;
+                    text-align: center;
+                }
+
+                .reason {
+                    width: 30%;
+                    transition: .5s all ease-in-out;
+                    border: 2px solid $blueDark;
+                    border-radius: 7px;
+                    
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            #conseils {
+                width: 100%;
+
+                h4 {
+                    color: $white;
+                    font-size: 2rem;
+                    font-weight: 300;
+                    padding: 0 0 3vh 5vw;
+                }
+
+                p {
+                    @extend h4;
+
+                    font-size: 1rem;
+                    font-weight: 100;;
+                }
+            }
+        }
+    }
+
+//

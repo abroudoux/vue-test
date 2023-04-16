@@ -174,9 +174,10 @@
         border-radius: 10px;
         color: $red;
         padding: 2vh 2vw;
+        transition: .5s all ease-in-out;
     }
 
-    .alert-succes {
+    .alert-success {
         @extend .alert-error;
 
         background-color: $greenLight;

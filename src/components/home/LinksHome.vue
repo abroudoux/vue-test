@@ -14,7 +14,7 @@
 
 			<div id="links_btn">
 
-				<a href="#presentation">
+				<a href="#concept">
 					<button class="btn-2">Présentation</button>
 				</a>
 
@@ -53,6 +53,6 @@
 
 	// Imports
 	@import "src/styles/global.scss";
-	@import "src/styles/styles.components/home.links.scss";
+	@import "src/components/home/home.links.scss";
 
 </style>

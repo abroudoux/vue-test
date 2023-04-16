@@ -22,6 +22,6 @@
 
 	// Imports
 	@import "src/styles/global.scss";
-	@import "src/styles/styles.components/about.team.scss";
+    @import "src/components/about/team/about.team.scss";
 
 </style>

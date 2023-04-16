@@ -16,6 +16,10 @@
             width: 50%;
             height: 100%;
 
+            h1 {
+                color: $pink;
+            }
+
             p {
                 text-justify: auto;
                 padding: 0 5vw;
@@ -24,6 +28,7 @@
 
             h2 {
                 padding: 10vh 5vw 5vh;
+                color: $white;
             }
 
             #btn_presentation_link {

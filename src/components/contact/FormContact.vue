@@ -7,6 +7,11 @@
             Nous contacter
         </h1>
 
+        <div id="infos_form">
+            <span class="alert-success" id="span_success"></span>
+            <span class="alert-error" id="span_alert"></span>
+        </div>
+
         <form @submit.prevent="onSubmit">
 
             <label for="firstName">
@@ -56,13 +61,7 @@
 
         </form>
 
-        <div id="infos_form">
-            <span class="alert-succes"></span>
-            <span class="alert-error"></span>
-        </div>
-
 	</section>
-
 
 </template>
 
@@ -70,16 +69,11 @@
 
 <script lang="ts">
 
-
     import { defineComponent } from 'vue';
-    // import validateForm from 'src/scripts/validateForm';
 
     export default defineComponent ({
 
     	name: 'FormContact',
-        // components: {
-        //     // validateForm,
-        // },
         data() {
             return {
                 firstName:  '',
@@ -88,6 +82,9 @@
                 subject: '',
                 message: '',
             };
+        },
+        mounted() {
+            this.headingForm();
         },
         methods: {
 
@@ -101,10 +98,6 @@
 
             },
 
-            // validateInfos(): boolean {
-            //     return true;
-            // },
-
             onSubmit(): void {
 
                 if ( this.validateForm() ) {
@@ -116,12 +109,8 @@
                         subject: this.subject,
                         message: this.message,
                     };
-                    this.$emit( 'form-submitted', formInfos );
 
-                    // const successMessage = document.getElementsByClassName('.alert-succes') as unknown as HTMLSpanElement;
-                    // successMessage.setAttribute("style", "display: bloc");
-                    // Object.assign(successMessage.style, {display: "bloc"});
-                    // successMessage.innerText = "Votre message a été envoyé avec succès !";
+                    this.$emit( 'form-submitted', formInfos );
 
                     this.firstName = '';
                     this.lastName = '';
@@ -129,13 +118,35 @@
                     this.subject = '';
                     this.message = '';
 
-                } else {
-                    console.log('error');
+                    const errorMessage = document.querySelector(".alert-error") as HTMLSpanElement;
+                    errorMessage.style.display = 'none';
 
-                    // const errorMessage= document.getElementsByClassName('.alert-error') as unknown as HTMLDivElement;
-                    // errorMessage.setAttribute("style", "display: bloc");
-                    // Object.assign(errorMessage.style, {display: "bloc"});
-                    // errorMessage.innerText = 'Veuillez remplir les champs correctement';
+                    const successMessage = document.querySelector(".alert-success") as HTMLSpanElement;
+                    successMessage.style.display = 'block';
+                    successMessage.innerText = "Votre message a été envoyé avec succès !";
+
+                    const form = document.getElementById('form');
+
+                    form?.addEventListener( 'submit', (e: Event) => {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+
+                } else {
+
+                    const successMessage = document.querySelector(".alert-success") as HTMLSpanElement;
+                    successMessage.style.display = 'none';
+
+                    const errorMessage = document.querySelector(".alert-error") as HTMLSpanElement;
+                    errorMessage.style.display = 'block';
+                    errorMessage.innerText = "Veuillez remplir le formulaire correctement";
+
+                    const form = document.getElementById('form');
+
+                    form?.addEventListener( 'submit', (e: Event) => {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
                 };
 
             },
@@ -162,12 +173,9 @@
                     input.addEventListener( 'blur', () => {
 
                         formHeading.style.opacity = "0";
-
-                        setTimeout(() => {
-                            formHeading.textContent = "Nous contacter";
-                            formHeading.style.animation = "disparition_left 1s ease-in-out";
-                            formHeading.style.opacity = "1";
-                        }, 100);
+                        formHeading.textContent = "Nous contacter";
+                        formHeading.style.animation = "disparition_left 1s ease-in-out";
+                        formHeading.style.opacity = "1";
 
                     });
 
@@ -188,6 +196,6 @@
 
 	// Imports
 	@import "src/styles/global.scss";
-	@import "src/styles/styles.components/contact.form.scss";
+    @import "src/components/contact/contact.form.scss";
 
 </style>

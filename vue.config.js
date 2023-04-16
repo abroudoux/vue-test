@@ -13,6 +13,6 @@ module.exports = defineConfig({
         'css-loader',
         'sass-loader'
       ]
-    }
+    },
   ]
 })

@@ -1,10 +1,11 @@
 <template>
 
     <div>
-    	<PresentationAbout/>
+    	<PresentationAbout />
 	</div>
+
     <div>
-    	<TeamAbout/>
+    	<TeamAbout />
 	</div>
 
 </template>
@@ -13,8 +14,8 @@
 <script lang="ts">
 
     import { defineComponent } from 'vue';
-    import PresentationAbout from '@/components/PresentationAbout.vue';
-    import TeamAbout from '@/components/TeamAbout.vue';
+    import PresentationAbout from '@/components/about/presentation/PresentationAbout.vue';
+    import TeamAbout from '@/components/about/team/TeamAbout.vue';
 
     export default defineComponent({
         name: 'AboutView',
