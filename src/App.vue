@@ -1,6 +1,6 @@
 <template>
 
-    <header>
+    <header id="header" v-show="showHeader">
 
         <div class="logo">
             <a href="/">
@@ -32,8 +32,8 @@
             </div>
 
             <nav>
-                <router-link to="/mentions-legales">Mentions Légales</router-link>
-                <router-link to="/politiques-confidentialites">Politiques de confidentialité</router-link>
+                <router-link to="/">Mentions Légales</router-link>
+                <router-link to="/">Politiques de confidentialité</router-link>
                 <router-link to="/about">À propos</router-link>
             </nav>
             
@@ -81,6 +81,7 @@
 
     import { defineComponent, computed } from 'vue';
     import { useRoute } from 'vue-router';
+    import { ref } from 'vue';
 
     export default defineComponent({
 
@@ -88,11 +89,34 @@
         setup() {
             const route = useRoute();
             const currentRoutePath = computed(() => route.path);
+
+            const showHeader = ref(true);
+            const lastScrollTop = ref(0);
+
+            const scrollFunction = (): void => {
+
+                const header = document.getElementById('header') as HTMLElement;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop === 0) {
+                    showHeader.value = true;
+                } else if (scrollTop < lastScrollTop.value) {
+                    showHeader.value = true;
+                } else {
+                    showHeader.value = false;
+                }
+
+                lastScrollTop.value = scrollTop;
+                
+            };
+
+            window.addEventListener('scroll', scrollFunction);
+
             return {
                 currentRoutePath,
+                showHeader,
             };
         },
-
     });
 
 </script>

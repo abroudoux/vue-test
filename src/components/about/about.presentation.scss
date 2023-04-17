@@ -9,6 +9,7 @@
     #presentation {
         width: 100vw;
         height: 80vh;
+        margin-top: 20vh;
         display: flex;
         flex-direction: row;
 
@@ -17,17 +18,30 @@
             height: 100%;
 
             h1 {
+                font-size: 4rem;
+            }
+
+            #txt_important {
+                @extend h1;
+                padding: 0;
+                transition: .5s all ease-in-out;
                 color: $pink;
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
 
             p {
                 text-justify: auto;
+                font-size: 1.2rem;
                 padding: 0 5vw;
                 animation: apparition_left 1s ease-in-out;
             }
 
             h2 {
-                padding: 10vh 5vw 5vh;
+                padding: 10vh 0 5vh 5vw;
+                font-size: 3rem;
                 color: $white;
             }
 
@@ -39,6 +53,13 @@
         #presentation_img {
             width: 50%;
             height: 100%;
+
+            img {
+                animation: apparition_right 1s ease-in-out;
+                display: flex;
+                margin: 20vh 0 0;
+                width: 100%;
+            }
         }
     }
 

@@ -11,7 +11,7 @@
         flex-direction: column;
         height: 80vh;
         width: 100%;
-        margin-bottom: 60vh;
+        margin: 20vh 0 60vh;
 
         h1 {
             padding: 5vh 0 1vh 5vh;
@@ -27,7 +27,7 @@
             label {
                 padding: 3vh 0 1vw;
                 display: flex;
-                color: $white;
+                color: $blueDark;
                 justify-content: center;
             }
 
@@ -36,6 +36,7 @@
             textarea {
                 background-color: $white;
                 border-radius: 7px;
+                color: $blueDark;
                 border: 1px $greyLight solid;
                 padding: 1vh 1vw;
                 resize: none;

@@ -5,7 +5,7 @@
 		<div id="presentation_txt">
 
 			<h1>
-				Notre histoire
+				Notre <span id="txt_important">histoire</span>
 			</h1>
 
 			<p>
@@ -13,7 +13,7 @@
 			</p>
 
 			<h2>
-				Quels sont nos missions ?
+				Quelles sont nos missions ?
 			</h2>
 
 			<p>
@@ -23,9 +23,7 @@
 		</div>
 
 		<div id="presentation_img">
-			<!-- <a href="/">
-                <img :src='require("public/img/illustration_home.png")' />
-            </a> -->
+			<img :src='require("/Users/arthur/vue_project/public/img/sc_illustration.png")' />
 		</div>
 
 	</section>
@@ -39,6 +37,30 @@
 
     export default defineComponent({
     	name: 'PresentationAbout',
+		mounted() {
+			this.spanTxt();
+		},
+		methods: {
+			spanTxt(): void {
+				let txtImportant = document.getElementById('txt_important') as HTMLSpanElement;
+
+				txtImportant.addEventListener( 'mouseover', () => {
+					setTimeout(() => {
+            			txtImportant.textContent = "mission";
+						
+						setTimeout(() => {
+            				txtImportant.textContent = "objectif";
+
+							setTimeout(() => {
+            					txtImportant.textContent = "but";
+        					}, 500);
+
+        				}, 500);
+
+        			}, 500);
+				});
+			}, 
+		},
     });
 
 </script>

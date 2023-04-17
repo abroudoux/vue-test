@@ -9,6 +9,8 @@
     #offers {
         width: 100%;
         height: 80vh;
+        margin-top: 20vh;
+        transition: .5s all ease-in-out;
 
         p {
             font-size: 1.3rem;
@@ -30,6 +32,7 @@
                 height: 50vh;
                 border: 1px solid $white;
                 border-radius: 7px;
+                transition: .5s all ease-in-out;
 
                 p {
                     padding: 0;
@@ -52,7 +55,35 @@
 
                     .icons-buttons {
                         background-color: $pink;
+                        transition: .3s all ease-in-out
                     }
+                }
+            }
+
+            .open {
+                @extend .card;
+
+                height: 70vh;
+
+                .txt-offers {
+                    color: $white;
+                    text-align: center;
+                    justify-content: center;
+                    margin: 0 auto;
+                    display: flex;
+                }
+
+                .icons-buttons {
+                    rotate: 180deg;
+                }
+
+            }
+
+            .closed {
+                @extend .card;
+
+                .txt-offers {
+                    display: none;
                 }
             }
         }
