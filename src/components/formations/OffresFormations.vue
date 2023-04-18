@@ -18,7 +18,7 @@
                     Vendez plus grâce aux techniques d'influence
                 </h3>
 
-                <button class="btn-1 btn-card" id="card_1">
+                <button class="btn-1 btn-card">
                     En savoir plus
                     <font-awesome-icon icon="fa-solid fa-arrow-down" class="icons-buttons" />
                 </button>
@@ -39,7 +39,7 @@
                     Fédérez une équipe autour de votre projet
                 </h3>
 
-                <button class="btn-1 btn-card" id="card_2">
+                <button class="btn-1 btn-card">
                     En savoir plus
                     <font-awesome-icon icon="fa-solid fa-arrow-down" class="icons-buttons" />
                 </button>
@@ -60,7 +60,7 @@
                     Convertissez plus grâce aux secrets du cerveau
                 </h3>
 
-                <button class="btn-1 btn-card" id="card_3">
+                <button class="btn-1 btn-card">
                     En savoir plus
                     <font-awesome-icon icon="fa-solid fa-arrow-down" class="icons-buttons" />
                 </button>
